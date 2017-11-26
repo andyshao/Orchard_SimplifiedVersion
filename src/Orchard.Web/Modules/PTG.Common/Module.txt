@@ -1,0 +1,10 @@
+﻿Name: PTG.Common
+AntiForgery: enabled
+Author: The Orchard Team
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.0
+Description: Description for the module
+Features:
+    PTG.Common:
+        Description: Description for feature PTG.Common.
