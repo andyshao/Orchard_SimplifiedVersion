@@ -307,12 +307,12 @@ namespace Orchard.Swagger
                         {
                             //控制器
                             arrPath = type.Split(':')[1].Split('.');
-                            length = arrPath.Length;
+                            //length = arrPath.Length;
                             controllerName = arrPath[length - 1];
                             if (controllerName.EndsWith("Controller"))
                             {
                                 //模块信息
-                                var moduleName = arrPath[length - 3] + arrPath[length - 2];
+                                var moduleName = arrPath[0] + arrPath[1];
                                 moduleList.Add(moduleName);
 
                                 //获取控制器注释
