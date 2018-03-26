@@ -1,8 +1,8 @@
 ﻿namespace PTG.Login.ModelsDTO
 {
-    public class LoginUserInfo
+    public partial class LoginUserInfo
     {
-        public virtual string username { get; set; }
+        public virtual string account { get; set; }
         public virtual string password { get; set; }
     }
 }

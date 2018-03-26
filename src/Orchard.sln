@@ -147,6 +147,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTG.Login", "Orchard.Web\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaoTongGao.API", "Orchard.Web\Modules\PaoTongGao.API\PaoTongGao.API.csproj", "{B3B5538F-3AA4-4BD0-B708-EF38E452558E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTG.Common", "Orchard.Web\Modules\PTG.Common\PTG.Common.csproj", "{194CBC57-A46A-4E3A-8240-7FF0B87DE760}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeAnalysis|Any CPU = CodeAnalysis|Any CPU
@@ -660,6 +662,14 @@ Global
 		{B3B5538F-3AA4-4BD0-B708-EF38E452558E}.FxCop|Any CPU.Build.0 = Release|Any CPU
 		{B3B5538F-3AA4-4BD0-B708-EF38E452558E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3B5538F-3AA4-4BD0-B708-EF38E452558E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.CodeAnalysis|Any CPU.ActiveCfg = Release|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -705,9 +715,10 @@ Global
 		{6A13C844-AE98-4832-931B-3D9FEA06BC78} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{1DEBD189-21B8-441C-A86B-6CAC16BD6E9B} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{B3B5538F-3AA4-4BD0-B708-EF38E452558E} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
+		{194CBC57-A46A-4E3A-8240-7FF0B87DE760} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4
 		SolutionGuid = {51DBEEC9-6B6C-4A5C-904A-32FB167566E4}
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4
 	EndGlobalSection
 EndGlobal
