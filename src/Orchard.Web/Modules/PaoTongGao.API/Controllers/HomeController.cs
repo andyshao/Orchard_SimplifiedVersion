@@ -7,6 +7,9 @@ using System.Web.Http;
 
 namespace PaoTongGao.API.Controllers
 {
+    /// <summary>
+    /// 控制器
+    /// </summary>
     public class HomeController : ApiController
     {
         // GET: api/Home

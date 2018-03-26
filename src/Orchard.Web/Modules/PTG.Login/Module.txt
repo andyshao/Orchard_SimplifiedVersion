@@ -4,7 +4,7 @@ Author: The Orchard Team
 Website: http://orchardproject.net
 Version: 1.0
 OrchardVersion: 1.0
-Description: Description for the module
+Description: PTG.登陆/注册模块
 Features:
     PTG.Login:
-        Description: Description for feature PTG.Login.
+        Description: PTG.登陆/注册模块

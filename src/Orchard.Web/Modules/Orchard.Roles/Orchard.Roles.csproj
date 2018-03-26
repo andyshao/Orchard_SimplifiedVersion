@@ -93,14 +93,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activities\UnassignRoleActivity.cs" />
-    <Compile Include="Activities\AssignRoleActivity.cs" />
-    <Compile Include="Activities\IsInRoleActivity.cs" />
-    <Compile Include="Activities\UserTaskActivity.cs" />
     <Compile Include="AdminMenu.cs" />
     <Compile Include="Commands\RoleCommands.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Drivers\UserTaskDriver.cs" />
     <Compile Include="Events\IRoleEventHandler.cs" />
     <Compile Include="Events\PermissionAddedContext.cs" />
     <Compile Include="Events\PermissionRemovedContext.cs" />
@@ -112,8 +107,6 @@
     <Compile Include="Events\UserAddedContext.cs" />
     <Compile Include="Events\UserRemovedContext.cs" />
     <Compile Include="Events\UserRoleContext.cs" />
-    <Compile Include="Forms\SelectRolesForms.cs" />
-    <Compile Include="Forms\UserTaskForms.cs" />
     <Compile Include="Recipes\Builders\RolesStep.cs" />
     <Compile Include="Recipes\Executors\RolesStep.cs" />
     <Compile Include="Migrations.cs" />
@@ -161,14 +154,6 @@
       <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
       <Name>Orchard.Core</Name>
       <Private>false</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Orchard.Forms\Orchard.Forms.csproj">
-      <Project>{642a49d7-8752-4177-80d6-bfbbcfad3de0}</Project>
-      <Name>Orchard.Forms</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Orchard.Workflows\Orchard.Workflows.csproj">
-      <Project>{7059493c-8251-4764-9c1e-2368b8b485bc}</Project>
-      <Name>Orchard.Workflows</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

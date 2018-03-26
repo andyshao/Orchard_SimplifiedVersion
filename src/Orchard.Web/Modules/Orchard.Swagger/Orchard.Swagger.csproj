@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Orchard.Swagger</RootNamespace>
     <AssemblyName>Orchard.Swagger</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -123,7 +123,17 @@
   <ItemGroup>
     <Compile Include="Controllers\CustomApiExplorer.cs" />
     <Compile Include="Controllers\OrchardShellEvents.cs" />
+    <Compile Include="Controllers\SwaggerApiDescription.cs" />
+    <Compile Include="Controllers\SwaggerBoundTemplate.cs" />
     <Compile Include="Controllers\SwaggerConfig.cs" />
+    <Compile Include="Controllers\SwaggerHttpParsedRoute.cs" />
+    <Compile Include="Controllers\SwaggerHttpRouteParser.cs" />
+    <Compile Include="Controllers\SwaggerPathContentSegment.cs" />
+    <Compile Include="Controllers\SwaggerPathLiteralSubsegment.cs" />
+    <Compile Include="Controllers\SwaggerPathParameterSubSegment.cs" />
+    <Compile Include="Controllers\SwaggerPathSagment.cs" />
+    <Compile Include="Controllers\SwaggerPathSeparatorSegment.cs" />
+    <Compile Include="Controllers\SwaggerPathSubsegment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

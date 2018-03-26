@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PTG.Login.ModelsDTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,6 +10,11 @@ namespace PTG.Login.Controllers
 {
     public class LoginController : ApiController
     {
+        /// <summary>
+        /// Action
+        /// </summary>
+        /// <param name="loginUser"></param>
+        /// <returns></returns>
         // POST: api/Home
         public HttpResponseMessage Post(ModelsDTO.LoginUserInfo loginUser)
         {
@@ -23,8 +29,9 @@ namespace PTG.Login.Controllers
         }
 
         // DELETE: api/Home/5
-        public void Delete(int id)
+        public RetunLoginMessage Delete(int id)
         {
+            return new RetunLoginMessage() { account = id.ToString() };
         }
     }
 }

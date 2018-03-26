@@ -4,7 +4,7 @@ Author: The Orchard Team
 Website: http://orchardproject.net
 Version: 1.0
 OrchardVersion: 1.0
-Description: Description for the module
+Description: PTG.通用模块
 Features:
     PTG.Common:
-        Description: Description for feature PTG.Common.
+        Description: PTG.通用模块
