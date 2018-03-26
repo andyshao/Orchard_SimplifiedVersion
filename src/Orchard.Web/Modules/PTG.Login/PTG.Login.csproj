@@ -111,6 +111,10 @@
       <Name>Orchard.Core</Name>
       <Private>false</Private>
     </ProjectReference>
+    <ProjectReference Include="..\PTG.Common\PTG.Common.csproj">
+      <Project>{194cbc57-a46a-4e3a-8240-7ff0b87de760}</Project>
+      <Name>PTG.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
