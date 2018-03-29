@@ -61,6 +61,12 @@
       <HintPath>..\..\..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Orchard.Core">
+      <HintPath>..\..\..\packages\Orchard.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Orchard.Framework">
+      <HintPath>..\..\..\packages\Orchard.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Swashbuckle.Core.5.4.0\lib\net40\Swashbuckle.Core.dll</HintPath>
       <Private>True</Private>
@@ -114,18 +120,6 @@
     <Content Include="Styles\Styles.min.css" />
     <Content Include="Web.config" />
     <Content Include="Module.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
-      <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
-      <Name>Orchard.Framework</Name>
-      <Private>false</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\Orchard.Core.csproj">
-      <Project>{9916839C-39FC-4CEB-A5AF-89CA7E87119F}</Project>
-      <Name>Orchard.Core</Name>
-      <Private>false</Private>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\Web.config" />

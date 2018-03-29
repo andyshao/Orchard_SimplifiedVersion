@@ -61,6 +61,9 @@
       <HintPath>..\..\..\packages\Orchard.NuGet.Core.1.1.0.0\lib\NuGet.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Orchard.Framework">
+      <HintPath>..\..\..\packages\Orchard.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Services.Client" />
@@ -168,11 +171,6 @@
     <Content Include="Views\PackagingServices\AddModule.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
-      <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
-      <Name>Orchard.Framework</Name>
-      <Private>false</Private>
-    </ProjectReference>
     <ProjectReference Include="..\Orchard.Modules\Orchard.Modules.csproj">
       <Project>{17F86780-9A1F-4AA1-86F1-875EEC2730C7}</Project>
       <Name>Orchard.Modules</Name>

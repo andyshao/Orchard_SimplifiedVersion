@@ -58,6 +58,9 @@
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Orchard.Framework">
+      <HintPath>..\..\packages\Orchard.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -356,13 +359,6 @@
     <Content Include="Shapes\Views\NotFound.cshtml" />
     <Content Include="Title\Module.txt" />
     <Content Include="Settings\Views\EditorTemplates\Parts.Settings.SiteSettingsPart.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Orchard\Orchard.Framework.csproj">
-      <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
-      <Name>Orchard.Framework</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Common\Views\Parts.Common.Body.cshtml" />

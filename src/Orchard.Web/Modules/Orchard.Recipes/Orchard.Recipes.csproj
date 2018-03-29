@@ -64,6 +64,9 @@
       <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Orchard.Framework">
+      <HintPath>..\..\..\packages\Orchard.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -147,11 +150,6 @@
     <Compile Include="ViewModels\SiteSettingsStepViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Orchard\Orchard.Framework.csproj">
-      <Project>{2D1D92BB-4555-4CBE-8D0E-63563D6CE4C6}</Project>
-      <Name>Orchard.Framework</Name>
-      <Private>false</Private>
-    </ProjectReference>
     <ProjectReference Include="..\Orchard.ContentTypes\Orchard.ContentTypes.csproj">
       <Project>{0e7646e8-fe8f-43c1-8799-d97860925ec4}</Project>
       <Name>Orchard.ContentTypes</Name>
