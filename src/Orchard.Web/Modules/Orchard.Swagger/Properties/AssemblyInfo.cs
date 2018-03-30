@@ -6,7 +6,7 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sto.OA")]
+[assembly: AssemblyTitle("Orchard.Swagger")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Orchard")]
@@ -20,7 +20,7 @@ using System.Security;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("899968e0-bad5-48bd-a7bd-2f86f6a28db0")]
+[assembly: Guid("bfcbb7a9-8a0f-4707-a2dd-963d161c202c")]
 
 // Version information for an assembly consists of the following four values:
 //

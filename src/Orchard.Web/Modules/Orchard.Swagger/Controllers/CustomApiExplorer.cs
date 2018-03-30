@@ -20,7 +20,7 @@ namespace Orchard.Swagger
 {
 
     /// <summary> Explores the URI space of the service based on routes, controllers and actions available in the system. </summary>
-    public class CustomApiExplorer:ApiExplorer
+    public class CustomApiExplorer : ApiExplorer
     {
         public CustomApiExplorer(HttpConfiguration configuration) : base(configuration)
         {

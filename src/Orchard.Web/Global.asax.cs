@@ -7,9 +7,6 @@ using Orchard.WarmupStarter;
 using System.Web.Http;
 
 namespace Orchard.Web {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-    // visit http://go.microsoft.com/?LinkId=9394801
-
     public class MvcApplication : HttpApplication {
         private static Starter<IOrchardHost> _starter;
 
@@ -47,7 +44,7 @@ namespace Orchard.Web {
             var host = OrchardStarter.CreateHost(MvcSingletons);
             host.Initialize();
 
-            // initialize shells to speed up the first dynamic query
+            // 初始化shell以加速第一个动态查询。
             host.BeginRequest();
             host.EndRequest();
 
