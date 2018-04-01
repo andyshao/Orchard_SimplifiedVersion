@@ -22,13 +22,14 @@ namespace Orchard.WebApi.Routes {
                 var displayPath = item.Distinct().Single();
 
                 yield return new HttpRouteDescriptor {
-                    Name=displayPath,
                     Priority = -10,
-                    RouteTemplate = "api/" + displayPath + "/{controller}/{id}",
-                    Defaults = new {area = areaName, controller = "api", id = RouteParameter.Optional}
+                    RouteTemplate = "api/" + displayPath + "/{controller}/{action}/{id}",
+                    Defaults = new {area=areaName, controller = "api", id = RouteParameter.Optional}
                 };
             }
         }
+
+
         public void GetRoutes(ICollection<RouteDescriptor> routes) {
             foreach (var routeDescriptor in GetRoutes())
                 routes.Add(routeDescriptor);

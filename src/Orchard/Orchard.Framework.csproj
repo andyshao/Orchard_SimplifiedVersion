@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Orchard</RootNamespace>
     <AssemblyName>Orchard.Framework</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -43,7 +43,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\OrchardBasicCorrectness.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-    <LangVersion>6</LangVersion>
+    <LangVersion>5</LangVersion>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <NoWarn>
     </NoWarn>
@@ -57,7 +57,7 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-    <LangVersion>6</LangVersion>
+    <LangVersion>5</LangVersion>
     <NoWarn>0436</NoWarn>
   </PropertyGroup>
   <ItemGroup>
@@ -126,7 +126,6 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -722,6 +721,7 @@
     <Compile Include="WebApi\DefaultOrchardWebApiHttpControllerSelector.cs" />
     <Compile Include="WebApi\DefaultOrchardWebApiHttpHttpControllerActivator.cs" />
     <Compile Include="WebApi\Extensions\RouteExtension.cs" />
+    <Compile Include="WebApi\Filters\ControllerGroupAttribute.cs" />
     <Compile Include="WebApi\Filters\OrchardApiAuthorizationFilterDispatcher.cs" />
     <Compile Include="WebApi\Filters\UnhandledApiExceptionFilter.cs" />
     <Compile Include="WebApi\Filters\IFilterProvider.cs" />
@@ -1086,7 +1086,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

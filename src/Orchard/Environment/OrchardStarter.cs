@@ -38,7 +38,6 @@ using Orchard.WebApi.Filters;
 using System.Linq;
 using System.Web.Configuration;
 using System.Web.Http.Description;
-using Orchard.WebApi.Extensions;
 
 namespace Orchard.Environment {
     public static class OrchardStarter {
@@ -53,7 +52,6 @@ namespace Orchard.Environment {
             builder.RegisterModule(new LoggingModule());
             builder.RegisterModule(new EventsModule());
             builder.RegisterModule(new CacheModule());
-
             // a single default host implementation is needed for bootstrapping a web app domain
             builder.RegisterType<DefaultOrchardEventBus>().As<IEventBus>().SingleInstance();
             builder.RegisterType<DefaultCacheHolder>().As<ICacheHolder>().SingleInstance();
@@ -162,8 +160,9 @@ namespace Orchard.Environment {
 
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerSelector), new DefaultOrchardWebApiHttpControllerSelector(GlobalConfiguration.Configuration));
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new DefaultOrchardWebApiHttpControllerActivator(GlobalConfiguration.Configuration));
-            //GlobalConfiguration.Configuration.Services.Replace(typeof(IApiExplorer), new CustomApiExplorer(GlobalConfiguration.Configuration));
+
             GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+
             GlobalConfiguration.Configuration.Filters.Add(new OrchardApiActionFilterDispatcher());
             GlobalConfiguration.Configuration.Filters.Add(new OrchardApiExceptionFilterDispatcher());
             GlobalConfiguration.Configuration.Filters.Add(new OrchardApiAuthorizationFilterDispatcher());

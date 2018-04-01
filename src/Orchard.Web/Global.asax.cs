@@ -4,9 +4,11 @@ using System.Web.Routing;
 using Autofac;
 using Orchard.Environment;
 using Orchard.WarmupStarter;
-using System.Web.Http;
 
 namespace Orchard.Web {
+    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+    // visit http://go.microsoft.com/?LinkId=9394801
+
     public class MvcApplication : HttpApplication {
         private static Starter<IOrchardHost> _starter;
 
@@ -42,9 +44,10 @@ namespace Orchard.Web {
 
         private static IOrchardHost HostInitialization(HttpApplication application) {
             var host = OrchardStarter.CreateHost(MvcSingletons);
+
             host.Initialize();
 
-            // 初始化shell以加速第一个动态查询。
+            // initialize shells to speed up the first dynamic query
             host.BeginRequest();
             host.EndRequest();
 
