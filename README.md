@@ -1,3 +1,7 @@
+# Orchard_SimplifiedVersion
+该版本是以Orchard为基础简化出来的开发框架，仅保留了Orchard的基础功能，方便开发。
+还望各位不要把Orchard仅仅局限于CMS上，实际上它的设计更适合当作一个开发框架来使用。
+个人认为其是优于OSGI等支持插拔的开发框架的。另外至于现在比较火的ABP，在我看来只是DDD的一种实现方式，真的开发的话，个人还是感觉Orchard更好一些。
 # Orchard
 
 Orchard is a free, open source, community-focused Content Management System built on the ASP.NET MVC platform.
