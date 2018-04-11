@@ -129,6 +129,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZC.Admin", "Orchard.Web\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZC.WebSite", "Orchard.Web\Modules\NZC.WebSite\NZC.WebSite.csproj", "{553BDC9C-CC13-4BD6-AE0C-B7CA075AB077}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NZC.Common", "Orchard.Web\Modules\NZC.Common\NZC.Common.csproj", "{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CodeCoverage|Any CPU = CodeCoverage|Any CPU
@@ -496,6 +498,13 @@ Global
 		{553BDC9C-CC13-4BD6-AE0C-B7CA075AB077}.FxCop|Any CPU.Build.0 = Release|Any CPU
 		{553BDC9C-CC13-4BD6-AE0C-B7CA075AB077}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{553BDC9C-CC13-4BD6-AE0C-B7CA075AB077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}.CodeCoverage|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}.Coverage|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}.FxCop|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -536,6 +545,7 @@ Global
 		{9BDF979F-A62E-4FAE-B212-4A32B744B8A9} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{480CB879-9F6A-499C-9233-056517DB6157} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 		{553BDC9C-CC13-4BD6-AE0C-B7CA075AB077} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
+		{5BFE73BC-11AB-4C0E-9FD6-A870944B748B} = {E9C9F120-07BA-4DFB-B9C3-3AFB9D44C9D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\TransientFaultHandling.Core.5.1.1209.1\lib\NET4
