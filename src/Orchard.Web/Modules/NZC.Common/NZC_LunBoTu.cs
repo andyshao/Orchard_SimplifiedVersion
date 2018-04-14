@@ -12,13 +12,10 @@ namespace NZC.Common
     using System;
     using System.Collections.Generic;
     
-    public partial class NZC_ImageInfo
+    public partial class NZC_LunBoTu
     {
         public int Id { get; set; }
-        public string UserId { get; set; }
         public string ImageUrl { get; set; }
-        public string LoveCount { get; set; }
         public int ShanChu { get; set; }
-        public string PingFen { get; set; }
     }
 }

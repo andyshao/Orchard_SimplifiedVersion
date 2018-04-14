@@ -8,14 +8,14 @@ using System.Web;
 
 namespace NZC.Common.Service
 {
-    public class SqlHelper
+    public class SqlHelper : Orchard.IDependency
     {
         public static readonly string connstr = ConfigurationManager.ConnectionStrings["connstr"].ConnectionString;
 
         /// <summary>
         /// 对连接执行 Transact-SQL 语句并返回受影响的行数。
         /// </summary>
-        public static int ExecuteNonQuery(string sql, params SqlParameter[] parmeters)
+        public  int ExecuteNonQuery(string sql, params SqlParameter[] parmeters)
         {
             using (SqlConnection conn = new SqlConnection(connstr))
             {
@@ -34,7 +34,7 @@ namespace NZC.Common.Service
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static object ExecuteSacalar(string sql, params SqlParameter[] parameters)
+        public  object ExecuteSacalar(string sql, params SqlParameter[] parameters)
         {
             using (SqlConnection conn = new SqlConnection(connstr))
             {
@@ -53,7 +53,7 @@ namespace NZC.Common.Service
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        public static DataTable ExecuteDataTable(string sql, params SqlParameter[] parameters)
+        public  DataTable ExecuteDataTable(string sql, params SqlParameter[] parameters)
         {
             using (SqlConnection conn = new SqlConnection(connstr))
             {
@@ -71,7 +71,7 @@ namespace NZC.Common.Service
                 }
             }
         }
-        public static SqlDataReader ExecuteDataReader(string sql, params SqlParameter[] parameters)
+        public  SqlDataReader ExecuteDataReader(string sql, params SqlParameter[] parameters)
         {
             using (SqlConnection conn = new SqlConnection(connstr))
             {

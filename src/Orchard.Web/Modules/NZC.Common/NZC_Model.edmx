@@ -9,10 +9,23 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ImageUrl" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="LoveCount" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ShanChu" Type="int" Nullable="false" />
+          <Property Name="PingFen" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“qds16733757_db.dbo.NZC_LunBoTu”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="NZC_LunBoTu">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ImageUrl" />
+            <PropertyRef Name="ShanChu" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ImageUrl" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="ShanChu" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="NZC_UserInfo">
@@ -29,6 +42,13 @@
         <EntityContainer Name="qds16733757_dbModelStoreContainer">
           <EntitySet Name="NZC_ImageInfo" EntityType="Self.NZC_ImageInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NZC_UserInfo" EntityType="Self.NZC_UserInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NZC_LunBoTu" EntityType="Self.NZC_LunBoTu" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[NZC_LunBoTu].[Id] AS [Id], 
+[NZC_LunBoTu].[ImageUrl] AS [ImageUrl], 
+[NZC_LunBoTu].[ShanChu] AS [ShanChu]
+FROM [dbo].[NZC_LunBoTu] AS [NZC_LunBoTu]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -39,11 +59,12 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ImageUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LoveCount" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ShanChu" Type="Int32" Nullable="false" />
+          <Property Name="PingFen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="NZC_UserInfo">
           <Key>
@@ -56,16 +77,27 @@
           <Property Name="NiCheng" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="JueSe" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="qds16733757_dbEntities" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="NZC_LunBoTu">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ImageUrl" />
+            <PropertyRef Name="ShanChu" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ImageUrl" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ShanChu" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="qds16733757_dbEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="NZC_ImageInfo" EntityType="Self.NZC_ImageInfo" />
           <EntitySet Name="NZC_UserInfo" EntityType="Self.NZC_UserInfo" />
+          <EntitySet Name="NZC_LunBoTu" EntityType="Self.NZC_LunBoTu" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="qds16733757_dbModelStoreContainer" CdmEntityContainer="qds16733757_dbEntities">
+        <EntityContainerMapping StorageEntityContainer="qds16733757_dbModelStoreContainer" CdmEntityContainer="qds16733757_dbEntities1">
           <EntitySetMapping Name="NZC_ImageInfo">
             <EntityTypeMapping TypeName="qds16733757_dbModel.NZC_ImageInfo">
               <MappingFragment StoreEntitySet="NZC_ImageInfo">
@@ -74,6 +106,7 @@
                 <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
                 <ScalarProperty Name="LoveCount" ColumnName="LoveCount" />
                 <ScalarProperty Name="ShanChu" ColumnName="ShanChu" />
+                <ScalarProperty Name="PingFen" ColumnName="PingFen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -86,6 +119,15 @@
                 <ScalarProperty Name="Tel" ColumnName="Tel" />
                 <ScalarProperty Name="NiCheng" ColumnName="NiCheng" />
                 <ScalarProperty Name="JueSe" ColumnName="JueSe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NZC_LunBoTu">
+            <EntityTypeMapping TypeName="qds16733757_dbModel.NZC_LunBoTu">
+              <MappingFragment StoreEntitySet="NZC_LunBoTu">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="ShanChu" ColumnName="ShanChu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -105,7 +147,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
       </DesignerInfoPropertySet>
     </Options>
