@@ -64,7 +64,7 @@ namespace NZC.Member.Controllers
                     new System.Data.SqlClient.SqlParameter("PassWord",Model.PassWord) }));
             if(usercount==0)
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10002", Message = "用户名或密码错误！", Result="{username:"+Model.UserName+",password:"+Model.PassWord+"}" });
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10002", Message = "用户名或密码错误！" });
             }
             else
             {
