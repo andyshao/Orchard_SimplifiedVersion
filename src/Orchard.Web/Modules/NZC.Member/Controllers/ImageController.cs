@@ -70,7 +70,7 @@ namespace NZC.Member.Controllers
                     throw ex;
                 }
                 string pingfen = s.result[0].beauty;
-                SQLHelper.ExecuteNonQuery(@"insert into NZC_ImageInfo set 
+                SQLHelper.ExecuteNonQuery(@"insert into NZC_ImageInfo 
                                             (ImageUrl,UserId,LoveCount,PingFen,ShanChu)
                                              values
                                             (@ImageUrl,@UserId,@LoveCount,@PingFen,@ShanChu) ",
