@@ -49,7 +49,7 @@ namespace NZC.Member.Controllers
             }
             else
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "30001", JsonData = "false" });
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10002", Message = "用户名或密码错误！" });
             }
 
         }
