@@ -71,9 +71,9 @@ namespace NZC.Member.Controllers
                 }
                 string pingfen = s.result[0].beauty;
                 SQLHelper.ExecuteNonQuery(@"insert into NZC_ImageInfo 
-                                            (ImageUrl,UserId,LoveCount,PingFen,ShanChu)
+                                            (ImageUrl,UserId,LoveCount,ShanChu,PingFen)
                                              values
-                                            (@ImageUrl,@UserId,@LoveCount,@PingFen,@ShanChu) ",
+                                            (@ImageUrl,@UserId,@LoveCount,@ShanChu,@PingFen) ",
                                             new System.Data.SqlClient.SqlParameter[] {
                                                 new System.Data.SqlClient.SqlParameter("ImageUrl", 
                                                     ConfigurationManager.AppSettings["OSS.Domie"]
@@ -82,7 +82,7 @@ namespace NZC.Member.Controllers
                                                 new System.Data.SqlClient.SqlParameter("UserId",HttpContext.Current.Request.Form["username"]),
                                                 new System.Data.SqlClient.SqlParameter("LoveCount","0"),
                                                 new System.Data.SqlClient.SqlParameter("PingFen",pingfen),
-                                                new System.Data.SqlClient.SqlParameter("ShanChu",0)
+                                                new System.Data.SqlClient.SqlParameter("ShanChu",'0')
                                             });
                 return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "20000", JsonData = s });
             }
