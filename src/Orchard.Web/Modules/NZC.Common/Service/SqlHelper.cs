@@ -11,7 +11,6 @@ namespace NZC.Common.Service
     public class SqlHelper : Orchard.IDependency
     {
         public static readonly string connstr = ConfigurationManager.ConnectionStrings["connstr"].ConnectionString;
-
         /// <summary>
         /// 对连接执行 Transact-SQL 语句并返回受影响的行数。
         /// </summary>

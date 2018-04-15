@@ -12,7 +12,6 @@ using System.Web;
 
 namespace NZC.Common.Service
 {
-
     public  class OssObjectSet : Orchard.IDependency
     {
         private readonly string AccessKeyId= ConfigurationManager.AppSettings["OSS.AccessKeyId"];

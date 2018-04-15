@@ -22,11 +22,13 @@ namespace NZC.Member.Controllers
         private readonly UserFilters uf;
         private readonly OssObjectSet ossObjectSet;
         private readonly BaiDuApiHelper baiDuApiHelper;
-        public ImageController(UserFilters uf, OssObjectSet OssObjectSet, BaiDuApiHelper BaiDuApiHelper)
+        private readonly SqlHelper SQLHelper;
+        public ImageController(UserFilters uf, OssObjectSet OssObjectSet, BaiDuApiHelper BaiDuApiHelper,SqlHelper sqlhelper)
         {
             this.uf = uf;
             this.ossObjectSet = OssObjectSet;
             this.baiDuApiHelper = BaiDuApiHelper;
+            this.SQLHelper = sqlhelper;
         }
         [HttpPost]
         public string UpLoadFile()
@@ -68,20 +70,20 @@ namespace NZC.Member.Controllers
                     throw ex;
                 }
                 string pingfen = s.result[0].beauty;
-                using (NZC.Common.qds16733757_dbEntities1 db = new Common.qds16733757_dbEntities1())
-                {
-                    db.NZC_ImageInfo.Add(new Common.NZC_ImageInfo()
-                    {
-                        ImageUrl = ConfigurationManager.AppSettings["OSS.Domie"]
-                                 + HttpContext.Current.Request.Form["fileName"].ToString()
-                                 + ConfigurationManager.AppSettings["OSS.stylename"],
-                        UserId = HttpContext.Current.Request.Form["username"],
-                        LoveCount = "0",
-                        PingFen = pingfen,
-                        ShanChu = 0,
-                    });
-                    db.SaveChanges();
-                }
+                SQLHelper.ExecuteNonQuery(@"insert into NZC_ImageInfo set 
+                                            (ImageUrl,UserId,LoveCount,PingFen,ShanChu)
+                                             values
+                                            (@ImageUrl,@UserId,@LoveCount,@PingFen,@ShanChu) ",
+                                            new System.Data.SqlClient.SqlParameter[] {
+                                                new System.Data.SqlClient.SqlParameter("ImageUrl", 
+                                                    ConfigurationManager.AppSettings["OSS.Domie"]
+                                                    + HttpContext.Current.Request.Form["fileName"].ToString()
+                                                    + ConfigurationManager.AppSettings["OSS.stylename"]),
+                                                new System.Data.SqlClient.SqlParameter("UserId",HttpContext.Current.Request.Form["username"]),
+                                                new System.Data.SqlClient.SqlParameter("LoveCount","0"),
+                                                new System.Data.SqlClient.SqlParameter("PingFen",pingfen),
+                                                new System.Data.SqlClient.SqlParameter("ShanChu",0)
+                                            });
                 return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "20000", JsonData = s });
             }
             else
