@@ -43,9 +43,9 @@ namespace NZC.Member.Controllers
             }
         }
         [HttpPost]
-        public string UserNameRegist(string userName)
+        public string UserNameRegist(LoginRegist_LoginModel Model)
         {
-            int usercount = Convert.ToInt32(sqlHelper.ExecuteSacalar("select count(*) from NZC_UserInfo where UserName=@UserName", new System.Data.SqlClient.SqlParameter("UserName", userName)));
+            int usercount = Convert.ToInt32(sqlHelper.ExecuteSacalar("select count(*) from NZC_UserInfo where UserName=@UserName", new System.Data.SqlClient.SqlParameter("UserName", Model.UserName)));
             if (usercount == 0)
             {
                 return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10000", Message = "验证通过！" });

@@ -34,26 +34,26 @@ namespace NZC.Member.Controllers
             if (uf.UserTF(HttpContext.Current.Request.Form["username"], HttpContext.Current.Request.Form["password"]))
             {
                 string fileName = Guid.NewGuid().ToString() + ".jpg";
-                Stream filestream = HttpContext.Current.Request.Files["image"].InputStream;
                 try
                 {
+                    Stream filestream = HttpContext.Current.Request.Files["image"].InputStream;
                     ossObjectSet.PutObject(fileName, filestream);
-                    return fileName;
+                    return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "30000", JsonData = fileName });
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "30002", JsonData = ex.Message });
                 }
             }
             else
             {
-                return "false";
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "30001", JsonData = "false" });
             }
 
         }
 
         [HttpPost]
-        public JObject PingFen()
+        public string PingFen()
         {
             if (uf.UserTF(HttpContext.Current.Request.Form["username"], HttpContext.Current.Request.Form["password"]))
             {
@@ -72,7 +72,9 @@ namespace NZC.Member.Controllers
                 {
                     db.NZC_ImageInfo.Add(new Common.NZC_ImageInfo()
                     {
-                        ImageUrl = HttpContext.Current.Request.Form["fileName"].ToString(),
+                        ImageUrl = ConfigurationManager.AppSettings["OSS.Domie"]
+                                 + HttpContext.Current.Request.Form["fileName"].ToString()
+                                 + ConfigurationManager.AppSettings["OSS.stylename"],
                         UserId = HttpContext.Current.Request.Form["username"],
                         LoveCount = "0",
                         PingFen = pingfen,
@@ -80,11 +82,11 @@ namespace NZC.Member.Controllers
                     });
                     db.SaveChanges();
                 }
-                return s;
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "20000", JsonData = s });
             }
             else
             {
-                return JObject.Parse("{ErrorMessage:\"评分失败\"}");
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "20001", Message = "评分失败！" });
             }
         }
     }

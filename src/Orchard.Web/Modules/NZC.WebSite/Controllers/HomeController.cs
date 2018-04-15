@@ -16,7 +16,7 @@ namespace NZC.WebSite.Controllers
         public string Index()
         {
             DataTable lunbotu = sqlHelper.ExecuteDataTable("select * from NZC_LunBoTu where ShanChu='0'");
-            DataTable tupian = sqlHelper.ExecuteDataTable("select * from NZC_ImageInfo oder by pingfen desc");
+            DataTable tupian = sqlHelper.ExecuteDataTable("select * from NZC_ImageInfo order by pingfen desc");
             IndexModel Model = new IndexModel();
             Model.LunBoTu = Common.Service.ConvertHelper<LunBoTu>.DataTableConvertToList(lunbotu);
             Model.TuPian = Common.Service.ConvertHelper<TuPian>.DataTableConvertToList(tupian);
