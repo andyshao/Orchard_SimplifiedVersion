@@ -39,7 +39,7 @@ namespace NZC.Member.Controllers
             }
             else
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code="10001",Message="用户名已存在请重新输入！"});
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code="10004",Message="用户名已存在请重新输入！"});
             }
         }
         [HttpPost]
@@ -48,11 +48,11 @@ namespace NZC.Member.Controllers
             int usercount = Convert.ToInt32(sqlHelper.ExecuteSacalar("select count(*) from NZC_UserInfo where UserName=@UserName", new System.Data.SqlClient.SqlParameter("UserName", Model.UserName)));
             if (usercount == 0)
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10000", Message = "验证通过！" });
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10003", Message = "验证通过！" });
             }
             else
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10001", Message = "用户名已存在请重新输入！" });
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10004", Message = "用户名已存在请重新输入！" });
             }
         }
         [HttpPost]
