@@ -49,7 +49,7 @@ namespace NZC.Member.Controllers
             }
             else
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10002", Message = "用户名或密码错误！" });
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "10002", Message = "需登陆！" });
             }
 
         }
@@ -88,7 +88,7 @@ namespace NZC.Member.Controllers
             }
             else
             {
-                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "20001", Message = "评分失败！" });
+                return Newtonsoft.Json.JsonConvert.SerializeObject(new { Code = "20001", Message = "需登陆！" });
             }
         }
     }
